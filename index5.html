@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //getter, setter
+        ////ES5부터는 get/set 키워드도 사용가능 -> 소괄호를 떼줌
+        //데이터를 꺼내거나 수정할때 편리&실수방지&관리가능
+        var 사람 = {
+            name : 'kim',
+            age : 30,
+            //getter는 return을 반드시 해야함, 파라미터 입력받으면 안됨 
+            get nextAge(){
+                return this.age + 1;
+            },
+            //setter는 인자를 받아야함
+            set setAge(나이){
+                this.age = parseInt(나이); //데이터 자료형 안전장치를 걸어둘 수 있음
+            }
+        }
+        사람.nextAge;
+        사람.setAge = '20';
+
+
+        class 휴먼{
+            constructor(){
+                this.name = "전";
+                this.age = 20;
+            }
+            get nextAge(){
+                return this.age + 1;
+            }
+            set setAge(나이){
+                this.age = parseInt(나이);
+            }
+        }
+        var 휴먼1 = new 휴먼();
+
+        
+    </script>
+</body>
+</html>
