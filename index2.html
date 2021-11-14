@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ES5 방식
+        //Object.create로 상속하기
+        //이 방법은 class 문법에 밀려 인지도는 낮다.
+        
+        var 부모 = {name:'Kim', age:50};
+        var 자식 = Object.create(부모);
+        var 손자 = Object.create(자식);
+        자식.age = 20;
+        //순서1. 자식한테 먼저 age있는지 물어봄
+        //순서2. 부모한테 age를 찾음
+
+    </script>
+</body>
+</html>
