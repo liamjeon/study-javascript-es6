@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //extends(class 상속) 유사한 클레스를 만들어 복사 
+        //상속할 값이 너무 많으면 extends로 class를 복사
+        class 부모의부모{
+            constructor(name){
+                this.성 = 'Jeon';
+                this.이름 = name;
+            }
+            sayHi(){
+                console.log('hi 부모의부모');
+            }
+        }
+        //var 부모의부모1 = new 부모의부모('익현');
+        class 부모 extends 부모의부모{
+            constructor(name){
+                super(name); //물려받는 class의 constructor라는 의미
+                this.나이 = 50; //extends로 만든 class는 this를 그냥 못 씀 super()다음에 써야함
+            }
+            sayHi(){
+                console.log('hi 부모');
+                super.sayHi(); //이때  super는 부모의 prototype을 의미.
+            }
+        }
+        var 부모1 = new 부모('ikhyen');
+
+    </script>
+</body>
+</html>
