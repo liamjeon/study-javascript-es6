@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //construct 와 instance
+        let product1 = {name:'shirts', price:'50000'};
+
+        function 상품(이름, 가격){
+            this.name = 이름;
+            this.price = 가격;
+            this.부가세 = function(){
+                console.log('부가세: ' + this.price*0.1);
+            }
+        }
+        let product2 = new 상품('청소기', 50000);
+        let product3 = new 상품('세탁기', 10000);
+
+        product2.부가세();
+
+    </script>
+</body>
+</html>
