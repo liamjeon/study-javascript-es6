@@ -18,7 +18,7 @@
 
             //1초 후에 성공 판정
             setTimeout(function(){
-                resolve();
+                resolve('ok');
             },5000);
         });
 
@@ -30,8 +30,6 @@
         }).catch(function(){
             console.log('실패했어요');
         })
-
-
     </script>
 </body>
 </html>
