@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var emptyObject = {};
+      console.log(typeof emptyObject); // object
+
+      var person = {
+        name: "Lee",
+        gender: "male",
+        sayHello: function () {
+          console.log("Hi! My name is " + this.name);
+        },
+      };
+
+      console.log(typeof person); // object
+      console.log(person); // {name: "Lee", gender: "male", sayHello: ƒ}
+
+      person.sayHello(); // Hi! My name is Lee
+
+      //==================================================================================
+      // 생성자 함수
+      function Person(name, gender) {
+        this.name = name;
+        this.gender = gender;
+        this.sayHello = function () {
+          console.log("Hi! My name is " + this.name);
+        };
+      }
+
+      // 인스턴스의 생성
+      var person1 = new Person("Lee", "male");
+      var person2 = new Person("Kim", "female");
+
+      console.log("person1: ", typeof person1);
+      console.log("person2: ", typeof person2);
+      console.log("person1: ", person1);
+      console.log("person2: ", person2);
+
+      person1.sayHello();
+      person2.sayHello();
+
+      //==================================================================================
+
+      let b = "name";
+      let c = "ik";
+      let a = {
+        [b + c]: "hi",
+      };
+
+      console.log(a);
+
+      //      //==================================================================================
+
+      var person = {
+        "first-name": "Ung-mo",
+        "last-name": "Lee",
+        gender: "male",
+      };
+
+      delete person.gender;
+      console.log(person.gender); // undefined
+
+      delete person;
+      console.log(person); // Object {first-name: 'Ung-mo', last-name: 'Lee'}
+    </script>
+  </body>
+</html>
